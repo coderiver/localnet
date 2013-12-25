@@ -1,0 +1,205 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
++font(reg, ubuntu-regular)  
+=reg
+	font-family: "reg", arial, sans-serif 
++font(bold, ubuntu-bold)  
+=bold
+	font-family: "bold", arial, sans-serif 
++font(light, ubuntu-light)  
+=light
+	font-family: "light", arial, sans-serif 
+
+$org: #ff700e
+	
+body
+	min-width: 960px
+	+reg
+	font-size: 15px 
+	line-height: 1.4
+
+a
+	text-decoration: none 
+
+// common blocks
+.center
+	position: relative
+	width: 960px
+	margin: 0 auto
+.header
+	position: relative
+	height: 140px 
+.logo
+	position: absolute
+	top: 15px
+	left: 0
+	+s(logo)
+	+hidetext
+.lang
+	position: absolute
+	top: 83px
+	left: 175px
+	font-size: 0
+	a
+		display: inline-block
+		width: 37px
+		height: 16px
+		vertical-align: top
+		font-size: 12px
+		line-height: 16px
+		text-align: center
+		color: $org 
+		&.is-active
+			+si(lang)			
+			color: #5b5151 
+.header__info
+	position: absolute
+	top: 30px
+	right: 10px
+.header__phone
+	margin-bottom: 7px
+	>i, >span, >a
+		display: inline-block
+		vertical-align: middle
+	>i
+		margin-right: 15px 
+		+s(phone)
+	>span
+		margin-right: 15px
+		+bold
+		font-size: 29px
+		color: #5B5151 
+	>a
+		+s(phone-order)
+		font-size: 12px
+		color: #fff
+		text-align: center
+		line-height: 18px
+.arr-line
+	height: 4px
+	margin-bottom: 15px
+	background: url(../img/icons/arr-line.png) repeat-x 0 0 
+.header__address
+	i, span
+		display: inline-block
+		vertical-align: middle
+	i
+		margin: 0 8px 0 14px 
+		+s(map-point)
+	span
+		+bold
+		color: #4E4C4C 
+		
+.nav
+	position: relative
+	background: $org
+	box-shadow: 0 3px 0 rgba(125,87,25,.2)
+	z-index: 20
+	.center
+		display: table
+.nav__list
+	display: table-row
+	li
+		display: table-cell
+		&:first-child
+			a
+				&:before
+					display: none
+	a
+		position: relative
+		display: block
+		height: 45px
+		padding: 0 30px
+		line-height: 45px
+		+bold
+		font-size: 13px
+		color: #FFF 
+		text-align: center
+		&:before
+			content: ""
+			position: absolute
+			top: 20px
+			left: -2px
+			+s(nav)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

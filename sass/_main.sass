@@ -1,0 +1,669 @@
+// Normally mainpage styles
+.m-join
+	position: relative
+	background: url(../img/join-bg.jpg)
+	box-shadow: 0 2px 2px rgba(0,0,0,.1)
+	overflow: hidden 
+	z-index: 18  
+	.center
+		height: 480px
+.m-join__shine
+	position: absolute
+	top: 0
+	left: 50%
+	width: 800px
+	height: 800px
+	margin: -160px 0 0 -400px
+	border-radius: 50%
+	+background-image(radial-gradient(50% 50%, rgba(255,255,255,1), rgba(255,255,255,0)))
+	z-index: 2 
+.m-join__img
+	position: relative
+	background: url(../img/join-img.png) no-repeat 65% 100% 
+	z-index: 4 
+.m-join__content
+	width: 520px
+.m-join__title
+	padding: 20px 0
+	+light
+	font-size: 44px
+	color: #E8593D
+	text-transform: uppercase  
+	line-height: 1
+.m-join__text
+	position: relative
+	margin-bottom: 25px
+	padding: 20px 20px 5px
+	background: rgba(255,255,255,.9) 
+	box-shadow: 0 1px 2px #b08b52
+	color: #4E4C4C
+	p
+		margin-bottom: 15px
+		line-height: 1.2
+	strong
+		+bold
+		color: $org 
+	&:before
+		content: ""
+		position: absolute
+		top: -18px
+		left: 32px
+		+arr(18,24,rgba(255,255,255,.9),bl) 
+		box-shadow: -1px 0 0 #e2caa6
+.m-join__btn
+	a
+		display: inline-block
+		line-height: 64px
+		text-align: center
+		vertical-align: top 
+		+s(join-btn)
+		+bold
+		font-size: 25px
+		color: #fff
+		text-shadow: 0 1px 0 #ff4a07
+		
+
+.m-action
+	position: relative
+	background: #d1eaf6
+	box-shadow: 0 2px 2px rgba(0,0,0,.1)
+	z-index: 16 
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		left: 50%
+		bottom: 0
+		background: #b9e1f4  
+	.center
+		padding: 25px 0
+		font-size: 0
+		z-index: 2 
+.m-action__column
+	display: inline-block
+	width: 50%
+	padding-right: 20px
+	+box
+	vertical-align: top
+.m-action__nav
+	margin-left: 20px
+	font-size: 0
+.m-action__nav-in
+	display: inline-block
+	box-shadow: 0 1px 1px #a9d6ed
+	vertical-align: top
+.m-action__prev, .m-action__next, .m-action__type
+	display: inline-block
+	height: 50px 
+	background: #fff 
+	border-right: 1px solid #eaf4fa
+	vertical-align: top
+.m-action__prev, .m-action__next
+	width: 47px	
+	i
+		display: inline-block
+		vertical-align: middle
+.m-action__prev
+	i
+		+s(arr-left-green)
+.m-action__next
+	i
+		+s(arr-right-green)
+.m-action__type
+	padding: 0 17px
+	line-height: 50px
+	+light
+	font-size: 12px
+	color: #216B8F 
+.m-action__content
+	position: relative
+	min-height: 300px
+	padding: 30px 130px 75px 30px
+	margin-left: 10px
+	background: #FFF 
+	box-shadow: 0 1px 13px #8dc9e5 
+	background-repeat: no-repeat 
+	background-position: 100% 100% 
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: -10px
+		bottom: 0
+		width: 10px
+		background: url(../img/icons/action-circle.png) repeat-y 
+.m-action__link
+	position: absolute
+	bottom: 30px
+	left: 30px
+	height: 44px
+	padding: 0 20px
+	background: #839c3d 
+	line-height: 44px
+	text-shadow: 0 1px 0 rgba(0,0,0,.3)
+	+bold
+	font-size: 20px
+	text-transform: uppercase
+	color: #FFF  
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		right: -14px
+		+arr(14,44,#839c3d,r)
+.m-action__slider
+	position: relative
+	margin-bottom: 30px
+	&:after, &:before
+		content: ""
+		position: absolute
+		height: 1px
+		background: #fff
+		box-shadow: 0 1px 1px rgba(66,151,190,.47)
+	&:after
+		left: 6px
+		bottom: -2px
+		right: 2px
+	&:before
+		left: 8px
+		bottom: -5px
+		right: 4px 
+.m-action__title
+	margin-bottom: 20px
+	+light
+	font-size: 29px
+	color: #809A3A
+	line-height: 1
+	text-transform: uppercase 
+.m-action__text
+	color: #4e4c4c
+	font-size: 15px 
+.m-action__pager
+	text-align: center
+	font-size: 0
+.m-action__pager-in
+	display: inline-block
+	padding: 3px 4px 
+	vertical-align: top
+	background: #FFF
+	box-shadow: 0 1px 2px rgba(66,151,190,.47)
+	span
+		display: inline-block
+		width: 38px
+		height: 7px
+		margin-left: 4px
+		background: #F2F2F2  
+		vertical-align: top
+		+hidetext
+		cursor: pointer
+		&:first-child
+			margin: 0
+		&.is-active
+			background: #839c3d 
+.m-action__head
+	position: absolute
+	top: 14px
+	left: 50% 
+	width: 0
+	height: 42px
+	border-left: 75px solid #84C5E2
+	border-right: 75px solid #62b1d3
+	margin-left: -75px	
+	&:after
+		content: ""
+		position: absolute
+		bottom: -7px
+		left: -55px
+		right: -55px
+		+arr(110,7,#62b1d3,b)
+		opacity: .2 
+	span	
+		position: absolute
+		top: 0
+		left: -75px
+		width: 150px
+		line-height: 42px
+		+bold
+		font-size: 29px
+		color: #FFF  
+		text-align: center
+		text-shadow: 0 1px 0 rgba(0,0,0,.3)
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -11px
+			+arr(11,42,#84c5e2,l)
+		&:after
+			right: -11px
+			+arr(11,42,#62b1d3,r)
+.m-action__archive
+	position: absolute
+	left: 50%
+	bottom: 18px
+	width: 80px
+	height: 20px 
+	margin-left: -40px
+	span
+		position: relative
+		display: block
+		background: #FFF
+		font-size: 12px
+		line-height: 20px
+		text-align: center
+		color: $org   
+		z-index: 4 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -6px
+			+arr(6,20,#fff,l)
+		&:after
+			right: -6px
+			+arr(6,20,#fff,r)
+	i
+		position: absolute
+		top: 1px
+		left: 0
+		width: 80px
+		height: 20px
+		background: #99c9e1
+		z-index: 2 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -6px
+			+arr(6,20,#99c9e1,l)
+		&:after
+			right: -6px
+			+arr(6,20,#99c9e1,r)
+.m-action__column_blue
+	padding: 0 0 0 20px
+	.m-action__nav
+		margin: 0 20px 0 0
+		text-align: right
+	.m-action__prev
+		i
+			+s(arr-left-blue)
+	.m-action__next
+		i
+			+s(arr-right-blue)
+	.m-action__content
+		margin: 0 10px 0 0
+		&:before
+			left: auto
+			right: -10px
+			background: url(../img/icons/action-circle-right.png) repeat-y 
+	.m-action__title
+		color: #2292c3
+	.m-action__link
+		background: #6abce0  
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			right: -14px
+			+arr(14,44,#6abce0,r)
+	.m-action__pager-in
+		span
+			&.is-active
+				background: #6abce0 
+	.m-action__slider
+		&:after
+			left: 2px
+			bottom: -2px
+			right: 6px
+		&:before
+			left: 4px
+			bottom: -5px
+			right: 8px 
+
+
+
+
+.m-tariff
+	position: relative
+	padding: 40px 0 30px
+	background: url(../img/tariff-bg.jpg) 	
+	box-shadow: 0 2px 2px rgba(0,0,0,.1)
+	z-index: 14
+.m-tariff__title
+	position: relative
+	margin-bottom: 40px
+	text-align: center
+	overflow: hidden
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: 16px
+		left: 0
+		width: 248px
+		height: 8px
+		background: url(../img/icons/arr-yellow.png) repeat-x 0 0  
+	&:after
+		left: auto
+		right: 0
+	span
+		position: relative
+		display: inline-block
+		vertical-align: top
+		+bold
+		font-size: 29px 
+		color: #FFF 
+		text-shadow: 0 1px 0 #89ad56
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 14px
+			left: -95px
+			+s(tariff-lines)
+		&:after
+			left: auto
+			right: -95px
+.m-tariff__type
+	margin: 0 15px 33px
+	background: #799C50 
+	font-size: 0
+	li
+		position: relative
+		display: inline-block
+		width: 25%
+		vertical-align: top
+		&.is-active
+			&:after
+				content: ""
+				position: absolute
+				bottom: -33px
+				left: 50%
+				margin-left: -24px
+				+arr(48,14,#fff,t) 
+			a
+				background: #90b565 
+				&:after
+					display: none
+			&:first-child, &:last-child
+				a
+					&:before
+						+s(tariff-type-l-a)
+			&:last-child
+				a
+					&:before
+						+s(tariff-type-r-a)
+		&.is-active + li
+			a
+				&:after
+					display: none
+		&:first-child, &:last-child
+			a
+				&:before
+					content: ""
+					position: absolute
+					top: 0
+					left: -5px
+					+s(tariff-type-l)
+		&:last-child
+			a
+				&:before
+					left: auto
+					right: -5px
+					+s(tariff-type-r)
+		&:first-child
+			a
+				&:after
+					display: none
+	a
+		position: relative
+		display: block
+		height: 44px
+		line-height: 44px
+		+light
+		font-size: 12px
+		text-transform: uppercase
+		color: #FFF 
+		text-align: center
+		&:after
+			content: ""
+			position: absolute
+			top: 17px
+			left: 0
+			width: 1px
+			height: 7px
+			background: #EDF2E8 
+.m-tariff__list
+	position: relative
+	padding: 0 35px 10px 0
+	margin: 0 10px 
+	margin-bottom: 45px
+	background: #FFF 
+	&:after
+		content: ""
+		position: absolute
+		bottom: -14px
+		left: 0
+		right: 0
+		height: 14px
+		background: url(../img/icons/tariff-arr-down.png) repeat-x -24px 0
+.m-tafiff__list-in
+	display: table
+	width: 100%
+.m-tariff__row
+	display: table-row
+.m-tariff__col
+	position: relative
+	display: table-cell
+	&:first-child
+		padding-left: 20px
+		&:hover
+			&:before
+				display: none
+	.m-tariff__cell
+		padding: 0 30px 0 15px
+		span
+			display: inline-block
+			vertical-align: middle
+			line-height: 1.2
+	&:before	
+		display: none
+		content: ""
+		position: absolute
+		top: -20px
+		left: 0
+		right: 0
+		bottom: -50px
+		background: #fff9e8
+		box-shadow: 0 10px 9px rgba(96,132,54,.28)
+		z-index: 2
+	&:hover
+		&:before	
+			display: block
+.m-tariff__cell
+	position: relative
+	height: 64px
+	padding: 0 30px
+	border-bottom: 1px solid #e4d5a2 
+	line-height: 64px
+	z-index: 4 
+.m-tariff__cell_green
+	span
+		font-size: 25px
+		color: #799C50
+	strong
+		margin-right: 5px
+		+bold
+.m-tariff__cell_title, .m-tariff__cell_title-orange
+	height: 80px
+	line-height: 80px
+	font-size: 29px
+	color: #799C50
+.m-tariff__cell_title-orange
+	color: $org 
+.m-tariff__yes, .m-tariff__no
+	display: inline-block
+	vertical-align: middle
+.m-tariff__yes
+	+s(tariff-yes)
+.m-tariff__no
+	width: 60px
+	height: 1px
+	background: #E4D5A2  
+.m-tariff__cell_orange
+	color: $org
+	font-size: 25px  
+.m-tariff__cell_order
+	border: none
+	a
+		display: inline-block
+		vertical-align: middle
+		+bold
+		font-size: 20px
+		color: #fff 
+		text-shadow: 0 1px 0 #ff2a00
+		line-height: 48px
+		text-align: center
+		+s(tariff-order)
+.m-tariff__cell_action
+	margin-top: -1px
+	border: none
+	background: #799c50
+	color: #fff  
+	strong
+		position: relative
+		display: inline-block
+		height: 33px
+		margin-left: 12px
+		padding: 0 16px 0 7px
+		border: 1px solid #fff
+		border-width: 3px 3px 3px 0
+		line-height: 33px
+		vertical-align: middle
+		+bold
+		font-size: 25px		
+		color: #FFF 
+		&:before
+			content: ""
+			position: absolute
+			top: -3px
+			left: -12px
+			+s(tariff-arr-border)
+.m-tariff__more
+	text-align: right
+	a
+		font-size: 12px
+		color: #FFF 
+
+
+
+.m-map
+	padding-bottom: 70px
+	background: url(../img/map-bg.jpg) 
+.m-map__title
+	position: relative
+	text-align: center
+	z-index: 4 
+	span
+		position: relative
+		display: inline-block
+		width: 160px
+		height: 55px
+		text-align: center
+		background: #88c1b4
+		line-height: 65px
+		+bold
+		font-size: 18px
+		color: #fff  
+		text-shadow: 0 1px 0 rgba(0,0,0,.2)	
+		&:after	
+			content: ""
+			position: absolute
+			bottom: -24px
+			left: 0
+			+arr(160,24,#88c1b4,b)
+.m-map__container
+	position: relative
+	min-height: 780px
+	margin: 0 10px 60px 
+	box-shadow: 0 5px 21px rgba(51,133,114,.54)
+	z-index: 2 
+.m-map__form
+	position: absolute
+	top: 50px
+	left: 35px
+	right: 35px 
+.m-map__form-in
+	position: relative
+	margin-bottom: 15px
+	font-size: 0
+	input
+		width: 100%
+		height: 42px
+		padding: 0 65px 0 20px
+		box-shadow: inset 0 1px 2px rgba(104,167,153,.36), inset 0 0 5px rgba(103,169,154,.12)
+		+box
+		font-size: 18px
+		color: #4e4c4c
+	button
+		position: absolute
+		top: 0
+		right: 0
+		width: 45px
+		height: 42px
+		background: #88C1B4 
+		i
+			display: inline-block
+			vertical-align: middle
+			+s(map-btn-arr) 
+.m-map__form-help
+	padding: 0 20px
+	font-size: 15px
+	color: #4E4C4C 
+	span
+		margin-left: 10px
+.m-map__point
+	position: absolute
+	bottom: 30px
+	left: 30px
+	right: 30px
+	padding: 20px 30px 
+	background: rgba(16,48,40,.7) 
+.m-map__point-title
+	position: relative
+	float: left
+	width: 140px 
+	padding-right: 80px
+	font-size: 16px
+	color: #FFF 
+	i
+		position: absolute
+		top: 0
+		right: 60px
+		+s(map-point-arr)
+.m-map__point-list
+	width: auto
+	td
+		padding: 0 0 5px 40px
+		line-height: 1.2
+		&:first-child
+			padding: 0 
+	a
+		+bold
+		font-size: 16px
+		color: #FFF 
+
+
+
+
+
+
+
+
+
+
+
+
+
