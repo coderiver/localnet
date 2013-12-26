@@ -62,6 +62,9 @@ a
 	position: relative
 	width: 960px
 	margin: 0 auto
+	
+
+
 .header
 	position: relative
 	height: 140px 
@@ -94,7 +97,7 @@ a
 	right: 10px
 .header__phone
 	margin-bottom: 7px
-	>i, >span, >a
+	>i, >span
 		display: inline-block
 		vertical-align: middle
 	>i
@@ -105,12 +108,52 @@ a
 		+bold
 		font-size: 29px
 		color: #5B5151 
-	>a
+.phone-order
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	> button
 		+s(phone-order)
 		font-size: 12px
 		color: #fff
 		text-align: center
 		line-height: 18px
+.phone-order__form
+	display: none
+	position: absolute
+	top: 30px
+	right: -3px
+	width: 225px
+	padding: 15px 70px 15px 25px 
+	background: #FFF
+	box-shadow: 0 1px 13px rgba(66,151,190,.73)
+	z-index: 100   
+	&:before
+		content: ""
+		position: absolute
+		top: -7px
+		right: 56px 
+		+arr(14,7,#fff,t)
+	label, span
+		display: block
+		text-transform: uppercase
+		font-size: 12px
+		color: #5b5151
+	span
+		margin-bottom: 7px
+	input
+		width: 205px
+		height: 36px
+		padding: 0 10px
+		background-color: #e1eff5
+		box-shadow: inset 0 1px 3px rgba(0,0,0,.2)
+		font-size: 18px
+		color: #5B5151
+	button
+		position: absolute
+		bottom: 15px
+		right: 17px
+		+s(order-phone-btn)
 .arr-line
 	height: 4px
 	margin-bottom: 15px
@@ -125,6 +168,8 @@ a
 	span
 		+bold
 		color: #4E4C4C 
+		
+
 		
 .nav
 	position: relative
@@ -141,6 +186,15 @@ a
 			a
 				&:before
 					display: none
+		&.is-active
+			background: #878786 
+			a
+				&:before
+					display: none
+			& + li
+				a
+					&:before
+						display: none
 	a
 		position: relative
 		display: block
@@ -157,13 +211,41 @@ a
 			top: 20px
 			left: -2px
 			+s(nav)
-	
 
 
 
+.footer
+	background: #382b2b 
+.footer__nav
+	padding: 20px 0 30px
+	text-align: center
+	ul, li
+		display: inline-block
+		vertical-align: top
+	li
+		margin: 0 8px
+	a
+		font-size: 12px
+		color: #FFF
+		opacity: .5  
 
 
 
+.social
+	padding-bottom: 65px
+	text-align: center
+	li
+		display: inline-block
+		margin: 0 5px
+		vertical-align: top
+	a
+		display: block
+.social__tw
+	+s(social-tw)
+.social__fb
+	+s(social-fb)
+.social__vk
+	+s(social-vk)
 
 
 

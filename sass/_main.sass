@@ -197,6 +197,7 @@
 		vertical-align: top
 		+hidetext
 		cursor: pointer
+		+tr(background .2s linear)
 		&:first-child
 			margin: 0
 		&.is-active
@@ -462,12 +463,33 @@
 		&:hover
 			&:before
 				display: none
+		.m-tariff__cell_action
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: -20px
+				bottom: 0
+				width: 20px
+				background: #799c50 
 	.m-tariff__cell
 		padding: 0 30px 0 15px
 		span
 			display: inline-block
 			vertical-align: middle
-			line-height: 1.2
+			line-height: 1.2	
+	&:last-child
+		.m-tariff__cell_action
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				right: -35px
+				bottom: 0
+				width: 35px
+				background: #799c50 
 	&:before	
 		display: none
 		content: ""
@@ -654,16 +676,355 @@
 		+bold
 		font-size: 16px
 		color: #FFF 
+.m-map__help
+	position: relative
+	padding: 20px 40px
+	margin: 0 20px
+	border: 1px solid #fff
+	border-width: 0 10px 10px 
+	strong, span
+		display: inline-block
+		vertical-align: middle
+		color: #376B5F
+	strong
+		width: 190px
+		margin-right: 40px
+		line-height: 1.2
+		+bold
+		font-weight: normal
+		font-size: 19px		 
+	span
+		width: 580px
+		font-size: 15px
+	i
+		position: absolute
+		top: -24px
+		left: 50%
+		margin-left: -25px
+		+s(map-arr-top)
+		&:before, &:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 100%
+			height: 10px
+			background: #FFF
+			width: 434px
+		&:after
+			left: auto
+			right: 100%
+			width: 435px
+	 	
+		
+
+.m-tv
+	height: 750px
+	text-align: center
+	background: url(../img/tv-bg.jpg) no-repeat 50% 50% #54a1be
+.m-tv__title
+	display: inline-block
+	margin: 30px 0 15px
+	+s(m-tv-title)
+.m-tv__title-sub
+	margin-bottom: 30px
+	+bold
+	color: #FFF
+	font-size: 22px   
+	text-transform: uppercase
+	text-shadow: 0 1px 0 rgba(0,0,0,.2)
+.m-tv__set
+	display: inline-block
+	margin-bottom: 17px
+	+s(m-tv)
+.m-tv__detail
+	margin-bottom: 20px
+	font-size: 0
+	li
+		position: relative
+		display: inline-block
+		width: 28%
+		padding: 92px 1% 0
+		vertical-align: top
+		font-size: 19px
+		color: #FFF 
+		line-height: 1.2
+		&:nth-child(2)
+			width: 36%
+	i
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -37px
+.m-tv__ico1
+	+s(m-tv-ico1)
+.m-tv__ico2
+	+s(m-tv-ico2)
+.m-tv__ico3
+	+s(m-tv-ico3)
+.m-tv__link
+	position: relative
+	display: inline-block
+	height: 48px
+	width: 300px 
+	line-height: 48px
+	background: #FFF
+	font-size: 26px
+	color: #45A8AF 
+	text-transform: uppercase
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: 0
+	&:before
+		left: -14px
+		+arr(14,48,#fff,l)
+	&:after
+		right: -14px
+		+arr(14,48,#fff,r)
 
 
 
 
+.m-user
+	background: #8AC1C5 
+	.center
+		padding: 40px 0 50px
+.m-user__title
+	margin: 0 10px 20px
+	overflow: hidden
+	text-align: center
+	span
+		position: relative
+		display: inline-block
+		font-size: 22px
+		+bold
+		color: #FFF
+		text-shadow: 0 1px 0 rgba(0,0,0,.2) 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 10px
+			height: 8px
+			height: 8px
+			background: url(../img/icons/arr-yellow.png) repeat-x 0 0
+			width: 486px
+		&:before	
+			right: 120%
+		&:after
+			left: 120%
+.service
+	margin-bottom: 27px
+	font-size: 0
+.service__item
+	display: inline-block
+	width: 222px
+	min-height: 390px 
+	margin: 0 9px
+	background: #FFF 
+	box-shadow: 0 5px 13px rgba(78,133,137,.19)
+	vertical-align: top
+.service__link
+	display: block
+.service__ico
+	position: relative
+	height: 165px 
+	margin-bottom: 40px
+	line-height: 185px
+	font-size: 0
+	text-align: center
+	i
+		display: inline-block
+		vertical-align: middle
+	&:before, &:after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: -14px
+		+arr(222,14,#f4f1d3,b)
+	&:after
+		bottom: -13px
+.service__ico_1		
+	background: #f4f1d3
+	i
+		+s(m-serv-ico1)
+	&:before
+		border-color: #e9e4af transparent transparent transparent
+	&:after
+		border-color: #f4f1d3 transparent transparent transparent
+.service__ico_2	
+	background: #d7f0d6
+	i
+		+s(m-serv-ico2)
+	&:before
+		border-color: #b5e2b4 transparent transparent transparent
+	&:after
+		border-color: #d7f0d6 transparent transparent transparent
+.service__ico_3
+	background: #c8e8e6
+	i
+		+s(m-serv-ico3)
+	&:before
+		border-color: #9dd3cf transparent transparent transparent
+	&:after
+		border-color: #c8e8e6 transparent transparent transparent
+.service__ico_4
+	background: #c9e1ee
+	i
+		+s(m-serv-ico4)
+	&:before
+		border-color: #9ec7de transparent transparent transparent
+	&:after
+		border-color: #c9e1ee transparent transparent transparent
+.service__detail
+	padding: 0 27px 20px
+.service__title
+	margin-bottom: 20px 
+	text-align: center
+	font-size: 21px
+	color: #4A5351 
+	line-height: 1.1
+.service__text
+	font-size: 13px
+	color: #4E4C4C 
+.m-user__more
+	font-size: 0 
+	text-align: center
+	span, i
+		display: inline-block
+		vertical-align: middle
+	i
+		margin: 0 10px
+		+s(m-user-plus)
+	span
+		+s(m-user-arr-r)
+		line-height: 22px
+		font-size: 12px
+		color: $org
+		text-align: center  
+		&:first-child
+			+s(m-user-arr-l)
 
 
 
 
+.m-contacts
+	position: relative
+	background: #544949 
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		left: 50%
+		bottom: 0
+		background: #5b5151  
+	.center
+		padding-bottom: 65px
+		z-index: 2 
+.m-contacts__title
+	position: relative
+	margin-bottom: 25px
+	text-align: center
+	span
+		position: relative
+		display: inline-block
+		width: 280px
+		height: 48px
+		margin-top: -24px
+		background: #FFF 
+		text-align: center 
+		line-height: 48px
+		vertical-align: top
+		color: $org
+		font-size: 26px  
+		z-index: 4 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+			left: -14px
+			+arr(14,48,#fff,l)
+		&:after
+			left: auto
+			right: -14px
+			+arr(14,48,#fff,r)
+	i
+		position: absolute
+		bottom: -10px
+		left: 0
+		+arr(280,10,rgba(0,0,0,.2),b)
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: -15px
+		left: 50%
+		width: 780px
+		height: 6px
+		margin-left: -390px
+		background: url(../img/icons/arr-yellow-sm.png) repeat-x 0 0  
+		z-index: 2  
+	&:after	
+		top: 9px
+.m-contacts__item
+	display: table
+	width: 850px
+	margin: 0 auto 15px	
+	border: 2px solid #fff299
+	box-shadow: 0 1px 2px rgba(0,0,0,.2)
+	color: #fff 
+.m-contacts__row
+	display: table-row
+.m-contacts__cell
+	display: table-cell
+	width: 50%
+	height: 75px
+	padding: 10px 35px
+	vertical-align: middle
+	text-align: right
+	&:first-child
+		text-align: left
+.m-contacts__type
+	strong, span
+		display: block
+	strong
+		margin-bottom: 5px
+		+bold
+		font-weight: normal
+		font-size: 20px 
+	span
+		font-size: 14px
+.m-contacts__data
+	display: inline-block
+	width: 210px
+	text-align: left 
+	span, strong
+		display: block
+	strong
+		font-size: 21px
+		font-weight: normal
+	span
+		font-size: 14px
+	a
+		color: #FFA66A 
 
 
 
+.go-top
+	margin-top: 55px
+	text-align: center
+	button
+		position: relative
+		+s(go-top)
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 35px
+			width: 330px
+			height: 6px
+			background: url(../img/icons/arr-yellow-sm.png) repeat-x 0 0  
+		&:before
+			right: 110px
+		&:after
+			left: 110px
 
 

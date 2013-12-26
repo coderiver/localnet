@@ -8,6 +8,7 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
+	<script src="js/cycle.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body>
@@ -21,7 +22,20 @@
 				<a href="#">укр</a>
 			</div>
 			<div class="header__info">
-				<div class="header__phone"><i></i><span>221-28-28</span><a href="#">перезвоните мне</a></div>
+				<div class="header__phone">
+					<i></i>
+					<span>221-28-28</span>
+					<div class="phone-order">
+						<button class="js-phone-order">перезвоните мне</button>
+						<div class="phone-order__form">
+							<label>
+								<span>ВАШ ТЕЛЕФОН</span>
+								<input type="text">
+							</label>					
+							<button></button>		
+						</div>
+					</div>
+				</div>
 				<div class="arr-line"></div>
 				<div class="header__address"><i></i><span>г.Киев ул. Приречная 25-а</span></div>
 			</div>
@@ -31,7 +45,7 @@
 		<div class="center">
 			<ul class="nav__list">
 				<li><a href="#">О НАС</a></li>
-				<li><a href="#">АКЦИИ</a></li>
+				<li class="is-active"><a href="#">АКЦИИ</a></li>
 				<li><a href="#">ТАРИФЫ</a></li>
 				<li><a href="#">IPTV</a></li>
 				<li><a href="#">ПОКРЫТИЕ</a></li>
@@ -61,7 +75,7 @@
 		<div class="center">
 			<div class="m-action__head"><span>АКЦИИ</span></div>
 			<a class="m-action__archive" href="#"><span>архив акций</span><i></i></a>
-			<div class="m-action__column">
+			<div class="m-action__column js-m-slider-action">
 				<div class="m-action__nav">
 					<div class="m-action__nav-in">
 						<button class="m-action__prev"><i></i></button>
@@ -75,17 +89,27 @@
 						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
 						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
 					</div>
+					<div class="m-action__content" style="background-image: url(img/action1-pic.png)">
+						<div class="m-action__title">Получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
+					<div class="m-action__content" style="background-image: url(img/action1-pic.png)">
+						<div class="m-action__title">ПРИВодите  ДРУЗЕЙ и получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
+					<div class="m-action__content" style="background-image: url(img/action1-pic.png)">
+						<div class="m-action__title">ПРИВодите  ДРУЗЕЙ и получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
 				</div>	
 				<div class="m-action__pager">
-					<div class="m-action__pager-in">
-						<span class="is-active"></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+					<div class="m-action__pager-in"></div>
 				</div>			
 			</div>
-			<div class="m-action__column m-action__column_blue">
+			<div class="m-action__column m-action__column_blue js-m-slider-action">
 				<div class="m-action__nav">	
 					<div class="m-action__nav-in">
 						<div class="m-action__type">ДЛЯ ДЕЙСТВУЮЩИХ АБОНЕНТОВ</div>
@@ -95,18 +119,28 @@
 				</div>
 				<div class="m-action__slider">
 					<div class="m-action__content" style="background-image: url(img/action2-pic.png)">
+						<div class="m-action__title">Получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
+					<div class="m-action__content" style="background-image: url(img/action2-pic.png)">
+						<div class="m-action__title">ПРИВодите  ДРУЗЕЙ и получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
+					<div class="m-action__content" style="background-image: url(img/action2-pic.png)">
+						<div class="m-action__title">ПРИВодите  ДРУЗЕЙ и получите подарок</div>
+						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
+						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
+					</div>
+					<div class="m-action__content" style="background-image: url(img/action2-pic.png)">
 						<div class="m-action__title">ПРИВодите  ДРУЗЕЙ и получите подарок</div>
 						<div class="m-action__text">Приведите 2их своих друзей и получите месяц одлкючения к интернету бесплатно!<br>и хостинг на 3 месяца</div>
 						<a class="m-action__link" href="#">ПОДРОБНЕЕ</a>
 					</div>
 				</div>
 				<div class="m-action__pager">
-					<div class="m-action__pager-in">
-						<span class="is-active"></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+					<div class="m-action__pager-in"></div>
 				</div>					
 			</div>
 		</div>
@@ -212,8 +246,204 @@
 					<img src="http://placehold.it/940x780" style="display: block">
 				</div>				
 			</div>
+			<div class="m-map__help">
+				<i></i>
+				<strong>Как пользоваться картой</strong>
+				<span>Приведите 2их своих друзей и получите месяц подлкючения многоканального к интернету бесплатно! и хостинг на 3 месяца для оплаты услуг интренета а так же просто раскажите друзьям и товарищам</span>
+			</div>
 		</div>
 	</div>
+	<div class="m-tv">
+		<div class="center">
+			<div class="m-tv__title"></div>
+			<div class="m-tv__title-sub">Настоящее iptv телевидение наa вашем телевизионном экране</div>
+			<div class="m-tv__set"></div>
+			<ul class="m-tv__detail">
+				<li><i class="m-tv__ico1"></i>Ведущие Мировые и Украинские  телевизионные каналы</li>
+				<li><i class="m-tv__ico2"></i>Возможность просматривать контент на популярных веб-сайтах Megogo.net, Oll.tv, Youtube, Vimeo и многих других.</li>
+				<li><i class="m-tv__ico3"></i>Доступ к огромной базе фильмов, сериалов и спортивных трансляций</li>				
+			</ul>
+			<a class="m-tv__link" href="#">узнать больше</a>
+		</div>		
+	</div>
+	<div class="m-user">
+		<div class="center">
+			<div class="m-user__title"><span>АБОНЕНТУ</span></div>
+			<ul class="service">
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_1"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_2"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_3"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_4"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_1"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_2"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_3"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+				<li class="service__item">
+					<a class="service__link" href="#">
+						<div class="service__ico service__ico_4"><i></i></div>
+						<div class="service__detail">
+							<div class="service__title">Пополнение счета</div>
+							<div class="service__text">Приведите 2их своих друзей месяц многоканального к интернету  бесплатно! и хостинг на 3 месяца</div>
+						</div>
+					</a>					
+				</li>
+			</ul>
+			<div class="m-user__more">
+				<a href="#">
+					<span>Дополнительная</span>
+					<i></i>
+					<span>информация</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="m-contacts">
+		<div class="center">
+			<div class="m-contacts__title"><span>Контакты<i></i></span></div>
+			<div class="m-contacts__item">
+				<div class="m-contacts__row">
+					<div class="m-contacts__cell">
+						<div class="m-contacts__type">
+							<strong>Абонентский отдел</strong>
+							<span>пн-пт с 9:00 до 20:00</span>
+							<span>сб с 10:00 до 18:00</span>
+						</div>
+					</div>
+					<div class="m-contacts__cell">
+						<div class="m-contacts__data">
+							<strong>ул. Приречная, 25-а</strong>
+							<span>(вход со стороны набережной)</span>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="m-contacts__item">
+				<div class="m-contacts__row">
+					<div class="m-contacts__cell">
+						<div class="m-contacts__type">
+							<strong>Подключиться</strong>
+							<span>круглосуточно (24/7/365)</span>
+						</div>
+					</div>
+					<div class="m-contacts__cell">
+						<div class="m-contacts__data">
+							<strong>(044) 221-28-28</strong>
+							<span><a href="mailto:sales@lan.ua">sales@lan.ua</a></span>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="m-contacts__item">
+				<div class="m-contacts__row">
+					<div class="m-contacts__cell">
+						<div class="m-contacts__type">
+							<strong>Подключиться</strong>
+							<span>круглосуточно (24/7/365)</span>
+						</div>
+					</div>
+					<div class="m-contacts__cell">
+						<div class="m-contacts__data">
+							<strong>(044) 221-28-28</strong>
+							<span><a href="mailto:sales@lan.ua">sales@lan.ua</a></span>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="m-contacts__item">
+				<div class="m-contacts__row">
+					<div class="m-contacts__cell">
+						<div class="m-contacts__type">
+							<strong>Сервисный центр</strong>
+							<span>диагностика, ремонт, обслуживание ПК пн-пт с 10:00 до 20:00</span>
+							<span>сб-вс прием-выдача техники  по предварительной записи</span>
+						</div>
+					</div>
+					<div class="m-contacts__cell">
+						<div class="m-contacts__data">
+							<strong>(044) 221-28-28</strong>
+							<span><a href="mailto:sales@lan.ua">sales@lan.ua</a></span>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="go-top js-go-top">
+				<button></button>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="center">
+			<nav class="footer__nav">
+				<ul>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Тарифы</a></li>
+					<li><a href="#">Покрытие</a></li>
+					<li><a href="#">Абоненту</a></li>                              
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<ul class="social">
+				<li><a class="social__tw" href="#"></a></li>
+				<li><a class="social__fb" href="#"></a></li>
+				<li><a class="social__vk" href="#"></a></li>
+			</ul>
+		</div>
+	</footer>
 </div>
 <!-- END out-->
 </body>
