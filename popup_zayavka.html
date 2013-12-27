@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lte IE 8]><html class="lteie8"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.js"></script>
+	<script src="js/cycle.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+<div class="popup">
+	<div class="popup__in">
+		<div class="popup__head">
+			<div class="popup__title">ЗАЯВКА НА ПОДКЛЮЧЕНИЕ</div>
+			<button class="popup__close"></button>
+			<div class="popup__ico">
+				<i class="popup__ico-arr"></i>
+				<i class="popup__ico-zayavka"></i>
+			</div>
+		</div>
+		<div class="popup__content">
+			<div class="popup__form">
+				<label class="field">
+					<span class="field__title">Имя</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__title">Контактный телефон</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__title">Адрес подключения</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<div class="field">
+					<span class="field__title">Тариф</span>
+					<div class="select js-select">
+						<div class="select__value">к-100</div>
+						<ul class="select__options">
+							<li>к-100</li>
+							<li>к-101</li>
+							<li>к-102</li>
+							<li>к-103</li>
+						</ul>
+						<input type="hidden">
+					</div>
+				</div>
+				<label class="field">
+					<span class="field__title">Проверочный код</span>
+					<span class="field__captcha">
+						<img src="http://lorempixel.com/112/32" alt="">
+					</span>
+					<span class="field__input field__input_sm">
+						<input type="text">
+					</span>
+				</label>
+				<div class="popup__form-button">
+					<button>ОТПРАВИТЬ ЗАЯВКУ</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

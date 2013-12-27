@@ -1,0 +1,289 @@
+.nav-inner
+	position: relative
+	padding: 25px 0 25px 7px
+	background: #FFF
+	margin-bottom: 30px
+	box-shadow: 0 5px 13px rgba(78,133,137,.19)  
+	&:before
+		content: ""
+		position: absolute
+		top: -4px
+		left: 50%
+		margin-left: -12px
+		+s(inner-nav-arr-top)
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -6px
+		height: 6px
+		background: url(../img/icons/inner-nav-arr-down.png) repeat-x -4px 0 
+	li
+		margin-top: 8px
+		&:first-child
+			margin: 0
+		&.is-active
+			a
+				position: relative
+				background: #878786
+				margin-right: -3px
+				color: #fff  
+				&:before, &:after
+					content: ""
+					position: absolute
+					top: 0
+				&:before
+					left: 0
+					+arr(5,25,#fff,r)
+				&:after	
+					right: -5px
+					+arr(5,25,#878786,r)
+			i
+				+s(inner-nav-arr-a) 
+	a
+		position: relative
+		display: block
+		padding: 5px 15px 5px 30px
+		font-size: 13px
+		line-height: 1.2
+	i
+		position: absolute
+		top: 9px
+		left: 13px
+		+s(inner-nav-arr)
+
+
+
+.works
+	margin-bottom: 50px
+	tr
+		&:last-child
+			td
+				border: none
+	th
+		padding: 15px 
+		background: #745d4d 
+		font-size: 13px
+		font-weight: normal
+		color: #fff 
+		text-align: left
+	td
+		padding: 10px
+	.works__title
+		border-bottom: 2px solid $org 
+		+bold
+		font-size: 17px
+		color: #4E4C4C 
+	.works__title_mod
+		padding-top: 25px
+.works__type
+	td
+		border-bottom: 1px solid #d5c4b9 
+.works__type_first
+	td
+		padding-top: 20px
+		
+
+
+.title-out
+	margin-bottom: 25px
+	padding-right: 250px
+	img
+		position: absolute
+		top: 0
+		right: 0
+.title
+	margin-bottom: 10px
+	+light
+	font-size: 39px
+	color: $org
+	text-transform: uppercase 
+	
+
+
+
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 150px 0
+	background: rgba(31,53,61,.7) 
+	overflow: auto
+.popup__in
+	width: 524px
+	margin: 0 auto
+	background: #FFF
+	box-shadow: 0 1px 13px rgba(0,0,0,.3) 
+.popup__head
+	position: relative
+	background: #FF7B15 
+	&:after, &:before
+		content: ""
+		position: absolute
+		bottom: -7px
+		+s(popup-circles)
+	&:before
+		left: 0
+	&:after
+		right: 0
+.popup__title
+	padding: 12px 70px 8px
+	text-align: center
+	+light
+	color: #fff
+	text-transform: uppercase
+	font-size: 29px   
+.popup__close
+	position: absolute
+	top: 17px
+	right: 28px
+	+s(popup-close) 
+.popup__ico
+	position: absolute
+	bottom: -7px
+	left: 50%
+	margin-left: -40px
+	width: 80px
+	height: 10px
+	background: #FF7B15
+	font-size: 0 
+.popup__ico-arr 
+	display: inline-block
+	+arr(80,40,#FF7B15,b)
+	vertical-align: top
+.popup__ico-zayavka
+	position: absolute
+	bottom: -16px
+	left: 24px
+	+s(popup-ico-zayavka)
+.popup__content
+	padding: 55px 35px
+	background: #FFF 
+.popup__form-button
+	padding-top: 35px
+	text-align: center
+	button
+		position: relative
+		height: 48px 
+		padding: 0 30px
+		background: $org
+		+bold
+		font-size: 20px
+		color: #fff
+		text-shadow: 0 1px 0 #ff4b07
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -14px
+			+arr(14,48,$org,l)
+		&:after
+			right: -14px
+			+arr(14,48,$org,r) 
+.popup__form-text
+	color: #4E4C4C 
+	text-align: center
+	p
+		margin-top: 10px
+		&:first-child
+			margin: 0
+	strong
+		+bold
+		font-weight: normal
+	span
+		+bold
+		color: $org 
+
+
+
+
+.field
+	display: block
+	margin-bottom: 15px
+	font-size: 0
+.field__title, .field__input, .field__captcha, .select
+	display: inline-block
+	vertical-align: middle
+.field__title
+	width: 160px
+	margin-right: 15px
+	font-size: 15px
+	color: #4E4C4C  
+.field__input
+	input
+		width: 270px
+		height: 38px
+		padding: 0 10px
+		background-color: #e1eff5
+		box-shadow: inset 0 1px 3px rgba(0,0,0,.2)
+		+box
+		font-size: #4e4c4c
+		font-size: 15px 
+.field__captcha
+	margin-right: 12px 
+.field__input_sm
+	input
+		width: 84px 
+
+
+.select
+	position: relative
+	cursor: pointer
+	+bold
+	font-size: 16px
+	color: #4E4C4C 
+	text-transform: uppercase
+.select__value
+	position: relative
+	height: 38px
+	padding: 0 30px 0 10px
+	background-color: #e1eff5
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.2)	
+	line-height: 38px
+	&:after
+		content: ""
+		position: absolute
+		top: 16px
+		right: 10px
+		+arr(10,6,#4E4C4C,b)
+.select__options
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	background-color: #e1eff5
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.2)	
+	li
+		padding: 5px 10px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
