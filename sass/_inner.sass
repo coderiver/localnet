@@ -98,13 +98,17 @@
 		margin-bottom: 20px
 .title
 	+light
-	font-size: 39px
+	font-size: 38px
 	color: $org
 	text-transform: uppercase 
 	line-height: 1.1
-.title-out__text
+
+
+.content
+	margin-bottom: 30px
+	p
+		margin-bottom: 15px 	
 	ol
-		padding-left: 30px
 		counter-reset: my-counter
 		li
 			position: relative
@@ -124,14 +128,6 @@
 				text-align: center
 				line-height: 28px
 				color: #FFF 
-		
-
-
-
-.content
-	margin-bottom: 30px
-	p
-		margin-bottom: 15px 	
 
 
 
@@ -144,6 +140,20 @@
 	padding: 150px 0
 	background: rgba(31,53,61,.7) 
 	overflow: auto
+.popup_banner
+	.popup__in
+		width: 900px
+		background: none
+		border-radius: 50%/70px
+		box-shadow: none
+		overflow: hidden  		
+	.popup__cut-1
+		border-radius: 70px/50%
+		overflow: hidden
+	.popup__cut-2
+		min-height: 400px
+		padding: 50px
+		background: #fff
 .popup__in
 	width: 524px
 	margin: 0 auto
@@ -197,25 +207,8 @@
 .popup__form-button
 	padding-top: 35px
 	text-align: center
-	button
-		position: relative
-		height: 48px 
-		padding: 0 30px
-		background: $org
-		+bold
-		font-size: 20px
-		color: #fff
-		text-shadow: 0 1px 0 #ff4b07
-		&:before, &:after
-			content: ""
-			position: absolute
-			top: 0
-		&:before
-			left: -14px
-			+arr(14,48,$org,l)
-		&:after
-			right: -14px
-			+arr(14,48,$org,r) 
+	.btn
+		text-align: center
 .popup__form-text
 	text-align: center
 	p
@@ -230,6 +223,25 @@
 		color: $org 
 
 
+.btn
+	position: relative
+	height: 48px 
+	padding: 0 30px
+	background: $org
+	+bold
+	font-size: 20px
+	color: #fff
+	text-shadow: 0 1px 0 #ff4b07
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: 0
+	&:before
+		left: -14px
+		+arr(14,48,$org,l)
+	&:after
+		right: -14px
+		+arr(14,48,$org,r) 
 
 
 .field
@@ -292,6 +304,77 @@
 
 
 
+.tab
+	margin-bottom: 30px
+.tab__nav
+	position: relative
+	font-size: 0
+	z-index: 2
+	button
+		height: 55px
+		padding: 0 40px
+		background: none 
+		+bold
+		font-size: 14px
+		color: $org 
+		&.is-active
+			background: #fdefd7 
+			color: #878786 
+.tab__content
+	position: relative
+	box-shadow: 0 5px 13px rgba(78,133,137,.19)  
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -6px
+		height: 6px
+		background: url(../img/icons/inner-nav-arr-down.png) repeat-x -4px 0 
+.tab__head
+	position: relative
+	padding: 25px 520px 25px 40px 
+	background: #FDEFD7 
+	.title
+		margin-bottom: 25px
+	> img
+		position: absolute
+		bottom: 0
+		right: 0
+.tab__head-text
+	font-size: 22px
+	color: #5C5C5C 
+.tab__info
+	padding: 25px 40px 30px 
+	.content
+
+
+
+.action__type
+	height: 24px
+	margin-bottom: 50px
+	border-bottom: 2px solid #FDEFD7
+	text-align: center
+	span
+		position: relative
+		display: inline-block
+		height: 48px
+		padding: 0 65px		
+		background: #FDEFD7 
+		font-size: 26px
+		line-height: 48px
+		text-transform: uppercase
+		color: $org 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -14px
+			+arr(14,48,#FDEFD7,l)
+		&:after
+			right: -14px
+			+arr(14,48,#FDEFD7,r)
 
 
 
