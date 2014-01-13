@@ -102,6 +102,10 @@
 	color: $org
 	text-transform: uppercase 
 	line-height: 1.1
+.title_bigger
+	font-size: 48px
+.title_small
+	font-size: 24px
 
 
 .content
@@ -137,23 +141,89 @@
 	left: 0
 	right: 0
 	bottom: 0
-	padding: 150px 0
+	padding: 100px 0
 	background: rgba(31,53,61,.7) 
 	overflow: auto
 .popup_banner
 	.popup__in
+		position: relative
 		width: 900px
 		background: none
-		border-radius: 50%/70px
 		box-shadow: none
-		overflow: hidden  		
-	.popup__cut-1
-		border-radius: 70px/50%
-		overflow: hidden
-	.popup__cut-2
-		min-height: 400px
-		padding: 50px
-		background: #fff
+.popup__slider
+	border-radius: 70px/50%
+	overflow: hidden
+.popup__banner-close
+	position: absolute
+	top: 0
+	right: 0
+	width: 30px
+	height: 30px
+	background: #FFF
+	border-radius: 50% 
+	font-size: 0
+	i
+		display: inline-block
+		+s(popup-banner-close)
+.popup__banner-prev, .popup__banner-next
+	position: absolute
+	top: 250px
+	width: 66px
+	height: 66px
+	background: #FFF
+	border-radius: 50%
+	font-size: 0
+	i
+		position: absolute
+		top: 12px 
+.popup__banner-prev
+	left: -90px 
+	i
+		left: 17px
+		+s(popup-banner-prev)
+.popup__banner-next
+	right: -90px
+	i
+		right: 17px
+		+s(popup-banner-next)
+.popup__slider-item
+	position: relative
+	min-height: 400px
+	padding: 60px 60px 100px
+	background: #fff
+	border-radius: 50%/70px
+	overflow: hidden
+	.title
+		position: relative
+		margin-bottom: 40px
+		padding: 0 110px 30px 0
+		&:after
+			content: ""
+			position: absolute
+			bottom: -15px
+			left: 0
+			right: 0
+			height: 7px
+			background: url(../img/icons/title-wave-yellow.png) repeat-x 
+	.popup__pic
+		position: absolute
+		bottom: 0
+		right: -20px
+	.content
+		position: relative
+		padding-right: 180px
+		z-index: 2
+		font-size: 23px
+.popup__slider-item__orange
+	background: $org 
+	.title, .content
+		color: #FFF
+	.content
+		padding: 0
+	.content, .popup__banner-btn
+		text-align: center 
+	.popup__banner-btn
+		margin-bottom: -50px
 .popup__in
 	width: 524px
 	margin: 0 auto
@@ -242,6 +312,24 @@
 	&:after
 		right: -14px
 		+arr(14,48,$org,r) 
+.btn_small
+	height: 36px
+	padding: 0 15px
+	font-size: 15px
+	&:before
+		left: -10px
+		+arr(10,36,$org,l)
+	&:after
+		right: -10px
+		+arr(10,36,$org,r)
+.btn_white
+	background: #FFF
+	color: #535353
+	text-shadow: none 
+	&:before
+		border-color: transparent #fff transparent transparent
+	&:after
+		border-color: transparent transparent transparent #fff
 
 
 .field
@@ -305,7 +393,7 @@
 
 
 .tab
-	margin-bottom: 30px
+	margin-bottom: 80px
 .tab__nav
 	position: relative
 	font-size: 0
@@ -322,7 +410,8 @@
 			color: #878786 
 .tab__content
 	position: relative
-	box-shadow: 0 5px 13px rgba(78,133,137,.19)  
+	padding: 30px 40px
+	background: #fdefd7
 	&:after
 		content: ""
 		position: absolute
@@ -330,58 +419,42 @@
 		right: 0
 		bottom: -6px
 		height: 6px
-		background: url(../img/icons/inner-nav-arr-down.png) repeat-x -4px 0 
-.tab__head
+		background: url(../img/icons/action-arrow.png) repeat-x -4px 0 
+
+
+.action__item
 	position: relative
-	padding: 25px 520px 25px 40px 
-	background: #FDEFD7 
+	display: block
+	width: 280px
+	margin-bottom: 40px
+	background: #fff
+	box-shadow: 0 5px 13px rgba(78,133,137,.19)
 	.title
-		margin-bottom: 25px
-	> img
-		position: absolute
-		bottom: 0
-		right: 0
-.tab__head-text
-	font-size: 22px
-	color: #5C5C5C 
-.tab__info
-	padding: 25px 40px 30px 
+		margin-bottom: 15px
+		color: #E8593D 
 	.content
-
-
-
-.action__type
-	height: 24px
-	margin-bottom: 50px
-	border-bottom: 2px solid #FDEFD7
-	text-align: center
-	span
-		position: relative
-		display: inline-block
-		height: 48px
-		padding: 0 65px		
-		background: #FDEFD7 
-		font-size: 26px
-		line-height: 48px
-		text-transform: uppercase
-		color: $org 
-		&:before, &:after
-			content: ""
-			position: absolute
-			top: 0
+		margin-bottom: 15px
+		color: #4E4C4C 
+	.btn
 		&:before
-			left: -14px
-			+arr(14,48,#FDEFD7,l)
+			display: none
+.action__pic
+	img
+		display: block
+.action__content
+	padding: 25px	
+.action__item_pic
+	.btn
+		position: absolute
+		bottom: 15px
+		left: 20px
+		height: 26px
+		padding: 0 10px
+		color: #E8593D 
+		font-size: 11px
 		&:after
-			right: -14px
-			+arr(14,48,#FDEFD7,r)
-
-
-
-
-
-
-
+			right: -10px
+			+arr(10,26,#fff,r)
 
 
 
