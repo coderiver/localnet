@@ -25,14 +25,16 @@
 				<div class="header__phone">
 					<i></i>
 					<span>221-28-28</span>
-					<div class="phone-order">
-						<button class="js-phone-order">перезвоните мне</button>
+					<div class="phone-order js-phone-order">
+						<button class="phone-order__btn">перезвоните мне</button>
 						<div class="phone-order__form">
+							<i ></i>
 							<label>
 								<span>ВАШ ТЕЛЕФОН</span>
 								<input type="text">
 							</label>					
-							<button></button>		
+							<button class="phone-order__submit"></button>		
+							<button class="phone-order__close"></button>		
 						</div>
 					</div>
 				</div>
@@ -41,20 +43,20 @@
 			</div>
 		</div>
 	</header>
-	<nav class="nav">
+	<nav class="nav js-nav">
 		<div class="center">
 			<ul class="nav__list">
-				<li><a href="#">О НАС</a></li>
-				<li class="is-active"><a href="#">АКЦИИ</a></li>
-				<li><a href="#">ТАРИФЫ</a></li>
-				<li><a href="#">IPTV</a></li>
-				<li><a href="#">ПОКРЫТИЕ</a></li>
-				<li><a href="#">АБОНЕНТУ</a></li>      
-				<li><a href="#">КОНТАКТЫ</a></li>  
+				<li><a href="m-join">О НАС</a></li>
+				<li><a href="m-action">АКЦИИ</a></li>
+				<li><a href="m-tariff">ТАРИФЫ</a></li>				
+				<li><a href="m-map">ПОКРЫТИЕ</a></li>
+				<li><a href="m-tv">IPTV</a></li>
+				<li><a href="m-user">АБОНЕНТУ</a></li>      
+				<li><a href="m-contacts">КОНТАКТЫ</a></li>  
 			</ul>
 		</div>		
 	</nav>
-	<div class="m-join">
+	<div id="m-join" class="m-join scroll-nav">
 		<div class="m-join__img">
 			<div class="center">
 				<div class="m-join__content">
@@ -71,7 +73,7 @@
 		</div>		
 		<div class="m-join__shine"></div>
 	</div>
-	<div class="m-action">
+	<div id="m-action" class="m-action scroll-nav">
 		<div class="center">
 			<div class="m-action__head"><span>АКЦИИ</span></div>
 			<a class="m-action__archive" href="#"><span>архив акций</span><i></i></a>
@@ -80,7 +82,7 @@
 					<div class="m-action__nav-in">
 						<button class="m-action__prev"><i></i></button>
 						<button class="m-action__next"><i></i></button>
-						<div class="m-action__type">ДЛЯ НОВЫХ АБОНЕНТОВ</div>
+						<a class="m-action__type" href="#">ДЛЯ НОВЫХ АБОНЕНТОВ</a>
 					</div>					
 				</div>
 				<div class="m-action__slider">
@@ -112,7 +114,7 @@
 			<div class="m-action__column m-action__column_blue js-m-slider-action">
 				<div class="m-action__nav">	
 					<div class="m-action__nav-in">
-						<div class="m-action__type">ДЛЯ ДЕЙСТВУЮЩИХ АБОНЕНТОВ</div>
+						<a class="m-action__type" href="#">ДЛЯ ДЕЙСТВУЮЩИХ АБОНЕНТОВ</a>
 						<button class="m-action__prev"><i></i></button>
 						<button class="m-action__next"><i></i></button>
 					</div>					
@@ -145,7 +147,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="m-tariff">
+	<div id="m-tariff" class="m-tariff scroll-nav">
 		<div class="center">
 			<div class="m-tariff__title"><span>ТАРИФЫ</span></div>
 			<ul class="m-tariff__type">
@@ -216,7 +218,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="m-map">
+	<div id="m-map" class="m-map scroll-nav">
 		<div class="center">
 			<div class="m-map__title"><span>ПОКРЫТИЕ</span></div>
 			<div class="m-map__container">
@@ -253,7 +255,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="m-tv">
+	<div id="m-tv" class="m-tv scroll-nav">
 		<div class="center">
 			<div class="m-tv__title"></div>
 			<div class="m-tv__title-sub">Настоящее iptv телевидение наa вашем телевизионном экране</div>
@@ -266,7 +268,7 @@
 			<a class="m-tv__link" href="#">узнать больше</a>
 		</div>		
 	</div>
-	<div class="m-user">
+	<div id="m-user" class="m-user scroll-nav">
 		<div class="center">
 			<div class="m-user__title"><span>АБОНЕНТУ</span></div>
 			<ul class="service">
@@ -350,7 +352,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="m-contacts">
+	<div id="m-contacts" class="m-contacts scroll-nav">
 		<div class="center">
 			<div class="m-contacts__title"><span>Контакты<i></i></span></div>
 			<div class="m-contacts__item">

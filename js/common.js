@@ -88,10 +88,56 @@ function select() {
 select();
 
 //phone order
-var btn_order_phone = $('.js-phone-order');
-btn_order_phone.bind('click', function() {
-	$(this).next().fadeToggle(200);
-});
+function phone_order() {
+	var el = $('.js-phone-order');
+	var form = el.find('.phone-order__form');
+	var btn = el.find('.phone-order__btn');
+	var close = el.find('.phone-order__close');
+	btn.bind('click', function(){
+		form.fadeIn();
+	});
+	close.bind('click', function(){
+		form.fadeOut();
+	});
+}
+phone_order();
+
+
+//nav
+function nav() {
+	var el = $('.js-nav');
+	link = el.find('a');
+	link.bind('click', function(){
+		//el.find('li').removeClass('is-active');
+		//$(this).parent().addClass('is-active');
+		var item = $(this).attr('href');
+		var top = $('.'+item).offset().top;
+		var nav_height = el.height();
+		$('body').animate({scrollTop: top-nav_height}, 500);
+		return false;
+	});	
+}
+nav();
+
+function nav_scroll() {
+	var offset_top = $(window).scrollTop();
+	var item_scroll = $('.scroll-nav');
+	item_scroll.each(function(){				
+		var item_scroll_top = $(this).offset().top;
+		if (offset_top > item_scroll_top) {
+			var item_el = $(this).attr('id');
+			var link_el = $('.js-nav a');
+			link_el.each(function(){				
+				var link_item = $(this).attr('href');
+				if (item_el == link_item) {
+					link_el.parent().removeClass('is-active');
+					$(this).parent().addClass('is-active');
+				};
+			});
+		};
+	});
+}
+nav_scroll();
 
 //go top
 $('.js-go-top').bind('click', function(){
@@ -103,6 +149,18 @@ $('.js-serice-more').bind('click', function(){
 	$('.service').toggleClass('is-open');
 	$(this).toggleClass('is-active');
 });
+
+var out = $('.out');
+
+//window scroll
+$(window).scroll(function(){
+	var offset_top = $(window).scrollTop();
+	if (offset_top > 140) {out.addClass('out_nav_fixed');}
+	else{out.removeClass('out_nav_fixed');};
+	nav_scroll();
+});
+
+
 
 //window click
 $(window).click(function(){
