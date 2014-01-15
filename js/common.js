@@ -106,15 +106,16 @@ phone_order();
 //nav
 function nav() {
 	var el = $('.js-nav');
-	link = el.find('a');
+	link = el.find('span');
 	link.bind('click', function(){
 		//el.find('li').removeClass('is-active');
 		//$(this).parent().addClass('is-active');
-		var item = $(this).attr('href');
-		var top = $('.'+item).offset().top;
+		var item = $(this).attr('data-item');
+		var top = $(item).offset().top;
 		var nav_height = el.height();
-		$('body').animate({scrollTop: top-nav_height}, 500);
-		return false;
+		$('body').animate({scrollTop: top}, 500, function(){
+			window.location.hash = item;	
+		});					
 	});	
 }
 nav();
@@ -122,14 +123,14 @@ nav();
 function nav_scroll() {
 	var offset_top = $(window).scrollTop();
 	var item_scroll = $('.scroll-nav');
-	item_scroll.each(function(){				
+	item_scroll.each(function(){		
 		var item_scroll_top = $(this).offset().top;
-		if (offset_top > item_scroll_top) {
+		if (offset_top >= item_scroll_top) {
 			var item_el = $(this).attr('id');
-			var link_el = $('.js-nav a');
-			link_el.each(function(){				
-				var link_item = $(this).attr('href');
-				if (item_el == link_item) {
+			var link_el = $('.js-nav span');
+			link_el.each(function(){		
+				var link_item = $(this).attr('data-item');
+				if ('#'+item_el == link_item) {
 					link_el.parent().removeClass('is-active');
 					$(this).parent().addClass('is-active');
 				};

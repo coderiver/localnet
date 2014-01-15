@@ -209,23 +209,23 @@ strong
 		display: table-cell
 		+tr(background .2s linear)
 		&:first-child
-			a
+			a, span
 				&:before
 					display: none
 		&.is-active
 			background: #878786 
 			&:hover
 				background: #878786 
-			a
+			a, span
 				&:before
 					display: none
 			& + li
-				a
+				a, span
 					&:before
 						display: none				
 		&:hover
 			background: rgba(255,255,255,.2)
-	a
+	a, span
 		position: relative
 		display: block
 		height: 45px
@@ -235,6 +235,7 @@ strong
 		font-size: 13px
 		color: #FFF 
 		text-align: center		
+		cursor: pointer
 		&:before
 			content: ""
 			position: absolute
