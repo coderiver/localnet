@@ -313,7 +313,7 @@
 
 
 .tab
-	margin-bottom: 80px
+	margin-bottom: 30px
 .tab__nav
 	position: relative
 	font-size: 0
@@ -330,8 +330,7 @@
 			color: #878786 
 .tab__content
 	position: relative
-	padding: 30px 40px
-	background: #fdefd7
+	box-shadow: 0 5px 13px rgba(78,133,137,.19)  
 	&:after
 		content: ""
 		position: absolute
@@ -339,7 +338,60 @@
 		right: 0
 		bottom: -6px
 		height: 6px
-		background: url(../img/icons/action-arrow.png) repeat-x -4px 0 
+		background: url(../img/icons/inner-nav-arr-down.png) repeat-x -4px 0 
+.sl-action
+	position: relative
+.sl-action__prev, .sl-action__next
+	position: absolute
+	top: 300px
+.sl-action__prev
+	left: -50px
+	+s(sl-action-prev)
+.sl-action__next
+	right: -50px
+	+s(sl-action-next)
+.sl-action__head
+	position: relative
+	padding: 25px 520px 25px 40px 
+	min-height: 300px
+	background: #FDEFD7 
+	.title
+		margin-bottom: 25px
+	> img
+		position: absolute
+		bottom: 0
+		right: 0
+.sl-action__text
+	font-size: 22px
+	color: #5C5C5C 
+.sl-action__info
+	padding: 25px 40px 30px 
+
+.action__type
+	height: 24px
+	margin-bottom: 50px
+	border-bottom: 2px solid #FDEFD7
+	text-align: center
+	span
+		position: relative
+		display: inline-block
+		height: 48px
+		padding: 0 65px		
+		background: #FDEFD7 
+		font-size: 26px
+		line-height: 48px
+		text-transform: uppercase
+		color: $org 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+		&:before
+			left: -14px
+			+arr(14,48,#FDEFD7,l)
+		&:after
+			right: -14px
+			+arr(14,48,#FDEFD7,r)
 
 
 .action__item

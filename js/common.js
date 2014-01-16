@@ -42,6 +42,26 @@ function slider_banner() {
 }
 slider_banner();
 
+//banner slider
+function slider_action() {
+	$('.js-sl-action').each(function(){
+		el_next = $('.sl-action__next');
+		el_prev = $('.sl-action__prev');
+		el_item = $('.sl-action__item');
+		el_in = $('.sl-action__in');
+		el_in.cycle({
+			fx: 'fade',
+		  timeout: 0,
+		  prev: el_prev,
+		  next: el_next,
+		  slides: el_item,
+		  autoHeight: 'container'
+		});
+	});
+}
+slider_action();
+
+
 //action masonry
 function action_masonry() {
 	var el = $('.js-action');
