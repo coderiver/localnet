@@ -171,7 +171,7 @@ $('.js-serice-more').bind('click', function(){
 	$(this).toggleClass('is-active');
 });
 
-var out = $('.out');
+var out = $('.js-out');
 
 //window scroll
 $(window).scroll(function(){

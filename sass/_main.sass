@@ -67,6 +67,9 @@
 		font-size: 25px
 		color: #fff
 		text-shadow: 0 1px 0 #ff4a07
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 		
 
 .m-action
@@ -107,6 +110,9 @@
 	vertical-align: top
 .m-action__prev, .m-action__next
 	width: 47px	
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 	i
 		display: inline-block
 		vertical-align: middle
@@ -122,6 +128,9 @@
 	+light
 	font-size: 12px
 	color: #216B8F 
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 .m-action__content
 	position: relative
 	min-height: 300px
@@ -152,6 +161,9 @@
 	font-size: 20px
 	text-transform: uppercase
 	color: #FFF  
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 	&:after
 		content: ""
 		position: absolute
@@ -289,6 +301,9 @@
 		&:after
 			right: -6px
 			+arr(6,20,#99c9e1,r)
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 .m-action__column_blue
 	padding: 0 0 0 20px
 	.m-action__nav
@@ -381,6 +396,9 @@
 		display: inline-block
 		width: 25%
 		vertical-align: top
+		&:hover
+			a
+				background: #9dbf76 
 		&.is-active
 			&:after
 				content: ""
@@ -391,16 +409,17 @@
 				+arr(48,14,#fff,t) 
 			a
 				background: #90b565 
+				cursor: default
 				&:after
 					display: none
-			&:first-child, &:last-child
-				a
-					&:before
-						+s(tariff-type-l-a)
-			&:last-child
-				a
-					&:before
-						+s(tariff-type-r-a)
+			// &:first-child, &:last-child
+			// 	a
+			// 		&:before
+			// 			+s(tariff-type-l-a)
+			// &:last-child
+			// 	a
+			// 		&:before
+			// 			+s(tariff-type-r-a)
 		&.is-active + li
 			a
 				&:after
@@ -433,6 +452,7 @@
 		text-transform: uppercase
 		color: #FFF 
 		text-align: center
+		+tr(background .2s linear)
 		&:after
 			content: ""
 			position: absolute
@@ -554,6 +574,9 @@
 		line-height: 48px
 		text-align: center
 		+s(tariff-order)
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 .m-tariff__cell_action
 	margin-top: -1px
 	border: none
@@ -681,6 +704,9 @@
 		+bold
 		font-size: 16px
 		color: #FFF 
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 .m-map__help
 	position: relative
 	padding: 20px 40px
@@ -777,6 +803,9 @@
 	font-size: 26px
 	color: #45A8AF 
 	text-transform: uppercase
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 	&:before, &:after
 		content: ""
 		position: absolute
@@ -787,6 +816,7 @@
 	&:after
 		right: -14px
 		+arr(14,48,#fff,r)
+
 
 
 
@@ -830,6 +860,11 @@
 .service__item
 	display: inline-block	
 	padding: 0 9px 25px		
+	&:hover
+		.service__ico
+			opacity: .7
+		.service__detail
+			color: rgba(0,0,0,.6)
 .service__link
 	display: block
 	width: 222px
@@ -844,6 +879,7 @@
 	line-height: 185px
 	font-size: 0
 	text-align: center
+	+tr(opacity .2s linear)
 	i
 		display: inline-block
 		vertical-align: middle
@@ -921,18 +957,18 @@
 		border-color: #eedac9 transparent transparent transparent
 .service__detail
 	padding: 0 27px 20px
+	color: #000 
+	+tr(color .2s linear)
 .service__title
 	display: table-cell
 	width: 168px 
 	height: 100px
 	text-align: center
 	font-size: 21px
-	color: #4A5351 
 	line-height: 1.1
 	vertical-align: middle
 .service__text
 	font-size: 13px
-	color: #4e4c4c 
 .m-user__more
 	font-size: 0 
 	text-align: center
@@ -942,6 +978,9 @@
 	button
 		margin: 0 10px
 		+s(m-user-plus)
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 	span
 		+s(m-user-arr-r)
 		line-height: 22px
@@ -1070,6 +1109,9 @@
 	button
 		position: relative
 		+s(go-top)
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 		&:before, &:after
 			content: ""
 			position: absolute

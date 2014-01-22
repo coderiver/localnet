@@ -29,6 +29,7 @@
 				background: #878786
 				margin-right: -3px
 				color: #fff  
+				opacity: 1 
 				&:before, &:after
 					content: ""
 					position: absolute
@@ -47,6 +48,9 @@
 		padding: 5px 15px 5px 30px
 		font-size: 13px
 		line-height: 1.2
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7 
 	i
 		position: absolute
 		top: 9px
@@ -70,6 +74,7 @@
 		text-align: left
 	td
 		padding: 10px
+		+tr(all .2s linear)
 	.works__title
 		border-bottom: 2px solid $org 
 		+bold
@@ -173,6 +178,9 @@
 	top: 17px
 	right: 28px
 	+s(popup-close) 
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .5 
 .popup__ico
 	position: absolute
 	bottom: -7px
@@ -222,6 +230,9 @@
 	font-size: 20px
 	color: #fff
 	text-shadow: 0 1px 0 #ff4b07
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 	&:before, &:after
 		content: ""
 		position: absolute
@@ -324,10 +335,14 @@
 		background: none 
 		+bold
 		font-size: 14px
-		color: $org 
+		color: $org
+		+tr(opacity .2s linear)
+		&:hover
+			opacity: .7  
 		&.is-active
 			background: #fdefd7 
 			color: #878786 
+			opacity: 1 
 .tab__content
 	position: relative
 	box-shadow: 0 5px 13px rgba(78,133,137,.19)  
@@ -344,6 +359,9 @@
 .sl-action__prev, .sl-action__next
 	position: absolute
 	top: 300px
+	+tr(opacity .2s linear)
+	&:hover
+		opacity: .7 
 .sl-action__prev
 	left: -50px
 	+s(sl-action-prev)
