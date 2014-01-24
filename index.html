@@ -8,6 +8,7 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
+	<script src="js/typeahead.js"></script>
 	<script src="js/cycle.js"></script>
 	<script src="js/common.js"></script>
 </head>
@@ -46,18 +47,18 @@
 	<nav class="nav js-nav">
 		<div class="center">
 			<ul class="nav__list">
-				<li><span data-item="#m-join">О НАС</span></li>
-				<li><span data-item="#m-action">АКЦИИ</span></li>
-				<li><span data-item="#m-tariff">ТАРИФЫ</span></li>				
-				<li><span data-item="#m-map">ПОКРЫТИЕ</span></li>
-				<li><span data-item="#m-tv">IPTV</span></li>
-				<li><span data-item="#m-user">АБОНЕНТУ</span></li>      
-				<li><span data-item="#m-contacts">КОНТАКТЫ</span></li>  
+				<li><span data-item="#join">О НАС</span></li>
+				<li><span data-item="#action">АКЦИИ</span></li>
+				<li><span data-item="#tariff">ТАРИФЫ</span></li>				
+				<li><span data-item="#map">ПОКРЫТИЕ</span></li>
+				<li><span data-item="#tv">IPTV</span></li>
+				<li><span data-item="#abonent">АБОНЕНТУ</span></li>      
+				<li><span data-item="#contacts">КОНТАКТЫ</span></li>  
 			</ul>
 		</div>		
 	</nav>
 	<div class="m-join">
-		<div id="m-join" class="scroll-nav"></div>
+		<div id="join" class="scroll-nav"></div>
 		<div class="m-join__img">
 			<div class="center">
 				<div class="m-join__content">
@@ -67,7 +68,7 @@
 						<p>Более 20 тысяч оболонцев и жителей близлежащих районов пользуются и рекомендуют <strong>LocalNet</strong> своим друзьями и знакомым.</p>
 					</div>
 					<div class="m-join__btn">
-						<a href="#">ПОДАТЬ  ЗАЯВКУ</a>
+						<a class="js-popup-open" href="#">ПОДАТЬ ЗАЯВКУ</a>
 					</div>
 				</div>
 			</div>			
@@ -75,7 +76,7 @@
 		<div class="m-join__shine"></div>
 	</div>
 	<div class="m-action">
-		<div id="m-action" class="scroll-nav"></div>
+		<div id="action" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-action__head"><span>АКЦИИ</span></div>
 			<a class="m-action__archive" href="#"><span>архив акций</span><i></i></a>
@@ -150,7 +151,7 @@
 		</div>
 	</div>
 	<div class="m-tariff">
-		<div id="m-tariff" class="scroll-nav"></div>
+		<div id="tariff" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-tariff__title"><span>ТАРИФЫ</span></div>
 			<ul class="m-tariff__type">
@@ -222,14 +223,13 @@
 		</div>
 	</div>
 	<div class="m-map">
-		<div id="m-map" class="scroll-nav"></div>
+		<div id="map" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-map__title"><span>ПОКРЫТИЕ</span></div>
 			<div class="m-map__container">
 				<div class="m-map__form">
 					<div class="m-map__form-in">
-						<input type="text" placeholder="Введите название улицы">
-						<button><i></i></button>
+						<input id="autocomplete" type="text" placeholder="Введите название улицы">
 					</div>
 					<div class="m-map__form-help">На улице ... подключены такие дома:<span>12, 14, 15, 16, 18, 19, 20, 22 </span></div>					
 				</div>
@@ -260,7 +260,7 @@
 		</div>
 	</div>
 	<div class="m-tv">
-		<div id="m-tv" class="scroll-nav"></div>
+		<div id="tv" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-tv__title"></div>
 			<div class="m-tv__title-sub">Настоящее iptv телевидение наa вашем телевизионном экране</div>
@@ -274,7 +274,7 @@
 		</div>		
 	</div>
 	<div class="m-user">
-		<div id="m-user" class="scroll-nav"></div>
+		<div id="abonent" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-user__title"><span>АБОНЕНТУ</span></div>
 			<ul class="service">
@@ -359,7 +359,7 @@
 		</div>
 	</div>
 	<div class="m-contacts">
-		<div id="m-contacts" class="scroll-nav"></div>
+		<div id="contacts" class="scroll-nav"></div>
 		<div class="center">
 			<div class="m-contacts__title"><span>Контакты<i></i></span></div>
 			<div class="m-contacts__item">
@@ -454,5 +454,65 @@
 		</ul>
 	</div>
 </footer>
+<!-- popup -->
+<div class="popup js-popup">
+	<div class="popup__in">
+		<div class="popup__head">
+			<div class="popup__title">ЗАЯВКА НА ПОДКЛЮЧЕНИЕ</div>
+			<button class="popup__close js-popup-close"></button>
+			<div class="popup__ico">
+				<i class="popup__ico-arr"></i>
+				<i class="popup__ico-zayavka"></i>
+			</div>
+		</div>
+		<div class="popup__content">
+			<div class="popup__form">
+				<label class="field">
+					<span class="field__title">Имя</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__title">Контактный телефон</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__title">Адрес подключения</span>
+					<span class="field__input">
+						<input type="text">
+					</span>
+				</label>
+				<div class="field">
+					<span class="field__title">Тариф</span>
+					<div class="select js-select">
+						<div class="select__value">к-100</div>
+						<ul class="select__options">
+							<li>к-100</li>
+							<li>к-101</li>
+							<li>к-102</li>
+							<li>к-103</li>
+						</ul>
+						<input type="hidden">
+					</div>
+				</div>
+				<label class="field">
+					<span class="field__title">Проверочный код</span>
+					<span class="field__captcha">
+						<img src="http://lorempixel.com/112/32" alt="">
+					</span>
+					<span class="field__input field__input_sm">
+						<input type="text">
+					</span>
+				</label>
+				<div class="popup__form-button">
+					<button class="btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
