@@ -114,6 +114,16 @@ strong { font-family: "bold", arial, sans-serif; }
 
 .social__vk { background: url('../img/icons-s69bbf178c3.png') 0 -2873px no-repeat; width: 22px; height: 22px; }
 
+.tt-query { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.tt-hint { color: #999999; }
+
+.tt-dropdown-menu { width: 870px; background-color: white; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.tt-suggestion { padding: 5px 20px; font-size: 16px; }
+
+.tt-suggestion.tt-is-under-cursor { color: white; background-color: #88c1b4; }
+
 .layout { margin-bottom: 40px; *zoom: 1; }
 .layout:after { content: " "; display: table; clear: both; }
 
@@ -454,13 +464,15 @@ strong { font-family: "bold", arial, sans-serif; }
 
 .m-map__container { position: relative; min-height: 780px; margin: 0 10px 60px; box-shadow: 0 5px 21px rgba(51, 133, 114, 0.54); z-index: 2; }
 
-.m-map__form { position: absolute; top: 50px; left: 35px; right: 35px; }
+.m-map__form { position: absolute; top: 50px; left: 35px; right: 35px; z-index: 10; }
 
-.m-map__form-in { position: relative; margin-bottom: 15px; font-size: 0; }
-.m-map__form-in input { width: 100%; height: 42px; padding: 0 20px; box-shadow: inset 0 1px 2px rgba(104, 167, 153, 0.36), inset 0 0 5px rgba(103, 169, 154, 0.12); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 18px; color: #4e4c4c; }
+.m-map__form-in { position: relative; font-size: 0; }
+.m-map__form-in input { width: 870px; height: 42px; padding: 0 20px; box-shadow: inset 0 1px 2px rgba(104, 167, 153, 0.36), inset 0 0 5px rgba(103, 169, 154, 0.12); border: 2px solid #88c1b4; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 18px; color: #4e4c4c; }
 
-.m-map__form-help { padding: 0 20px; font-size: 15px; }
-.m-map__form-help span { margin-left: 10px; }
+.m-map__form-help { display: none; padding: 8px 20px 10px; background: #88c1b4; font-size: 15px; color: white; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.m-map__form-help strong { font-family: "reg", arial, sans-serif; }
+.m-map__form-help strong span { margin-left: 5px; cursor: pointer; }
+.m-map__form-help.is-active { display: block; }
 
 .m-map__point { position: absolute; bottom: 30px; left: 30px; right: 30px; padding: 20px 30px; background: rgba(16, 48, 40, 0.7); }
 

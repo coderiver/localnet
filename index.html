@@ -8,9 +8,22 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
-	<script src="js/typeahead.js"></script>
+	<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+	<script src="js/hogan-2.0.0.js"></script>
+	<script src="js/typeahead.min.js"></script>
 	<script src="js/cycle.js"></script>
 	<script src="js/common.js"></script>
+	<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map ("map", {
+            center: [55.76, 37.64],
+            zoom: 7
+        });
+    }
+</script>
 </head>
 <body>
 <!-- BEGIN  out-->
@@ -229,7 +242,7 @@
 			<div class="m-map__container">
 				<div class="m-map__form">
 					<div class="m-map__form-in">
-						<input id="autocomplete" type="text" placeholder="Введите название улицы">
+						<input class="autocomplete" type="text" placeholder="Введите название улицы">
 					</div>
 					<div class="m-map__form-help">На улице ... подключены такие дома:<span>12, 14, 15, 16, 18, 19, 20, 22 </span></div>					
 				</div>
@@ -248,9 +261,7 @@
 						</tr>
 					</table>
 				</div>
-				<div class="m-map__el">
-					<img src="http://placehold.it/940x780" style="display: block">
-				</div>				
+				<div id="map" style="width: 940px; height: 780px"></div>				
 			</div>
 			<div class="m-map__help">
 				<i></i>

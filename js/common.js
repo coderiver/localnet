@@ -179,12 +179,12 @@ popup();
 
 
 //go top
-$('.js-go-top').bind('click', function(){
+$('.js-go-top').on('click', function(){
 	$('body').animate({scrollTop: 0}, 800);
 });
 
 //service more
-$('.js-serice-more').bind('click', function(){
+$('.js-serice-more').on('click', function(){
 	$('.service').toggleClass('is-open');
 	$(this).toggleClass('is-active');
 });
@@ -201,7 +201,15 @@ $(window).scroll(function(){
 
 
 //autocomplete
-
+$('.autocomplete').typeahead({                                                                                      
+  prefetch: '../data/street.json',
+  template: [
+    '<p class="street">{{name}}</p>'
+  ].join(''),
+  engine: Hogan                                                            
+}).on('autocomplete:selected', function (object, datum) {
+    alert('sdf');
+});;
 
 
 
