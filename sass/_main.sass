@@ -412,14 +412,6 @@
 				cursor: default
 				&:after
 					display: none
-			// &:first-child, &:last-child
-			// 	a
-			// 		&:before
-			// 			+s(tariff-type-l-a)
-			// &:last-child
-			// 	a
-			// 		&:before
-			// 			+s(tariff-type-r-a)
 		&.is-active + li
 			a
 				&:after
@@ -515,20 +507,6 @@
 				bottom: 0
 				width: 35px
 				background: #799c50 
-	&:before	
-		display: none
-		content: ""
-		position: absolute
-		top: -20px
-		left: 0
-		right: 0
-		bottom: -40px
-		background: #fff9e8
-		box-shadow: 0 10px 9px rgba(96,132,54,.28)
-		z-index: 2
-	&:hover
-		&:before	
-			display: block
 .m-tariff__cell
 	position: relative
 	height: 64px
@@ -652,7 +630,7 @@
 .m-map__container
 	position: relative
 	min-height: 780px
-	margin: 0 10px 60px 
+	margin: 0 10px 50px 
 	box-shadow: 0 5px 21px rgba(51,133,114,.54)
 	z-index: 2 
 .m-map__form
@@ -723,7 +701,7 @@
 .m-map__help
 	position: relative
 	padding: 20px 40px
-	margin: 0 20px
+	margin: 0 20px 30px
 	border: 1px solid #fff
 	border-width: 0 10px 10px 
 	strong, span
@@ -758,8 +736,19 @@
 			left: auto
 			right: 100%
 			width: 435px
-	 	
-		
+.m-map__streets	 	
+	padding: 0 20px
+	+clr
+	ul
+		float: left
+		width: 30%
+		margin-left: 5%
+		&:first-child
+			margin: 0 
+	span
+		display: block
+		font-weight: normal
+		font-size: 12px 
 
 .m-tv
 	position: relative
