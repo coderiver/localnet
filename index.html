@@ -8,7 +8,7 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
-	<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+	<script src="//api-maps.yandex.ru/2.0/?lang=ru-RU&load=package.full" type="text/javascript"></script>
 	<script src="js/hogan-2.0.0.js"></script>
 	<script src="js/typeahead.min.js"></script>
 	<script src="js/cycle.js"></script>
@@ -154,17 +154,17 @@
 	</div>
 	<div class="m-tariff">
 		<div id="tariff" class="scroll-nav"></div>
-		<div class="center">
+		<div class="center js-tabs">
 			<div class="m-tariff__title"><span>ТАРИФЫ</span></div>
 			<ul class="m-tariff__type">
-				<li class="is-active"><a href="#">ДЛЯ ФИЗИЧЕСКИХ ЛИЦ</a></li>
-				<li><a href="#">ДЛЯ ЧАСТНОГО СЕКТОРА</a></li>
-				<li><a href="#">ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</a></li>
-				<li><a href="#">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</a></li>
+				<li class="is-active"><a href="js-tab-1">ДЛЯ ФИЗИЧЕСКИХ ЛИЦ</a></li>
+				<li><a href="js-tab-2">ДЛЯ ЧАСТНОГО СЕКТОРА</a></li>
+				<li><a href="js-tab-3">ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</a></li>
+				<li><a href="js-tab-4">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</a></li>
 			</ul>
 			<div class="m-tariff__list">
 				<div class="m-tafiff__list-in">
-					<div class="m-tariff__row">
+					<div id="js-tab-1" class="m-tariff__row">
 						<div class="m-tariff__col">
 							<div class="m-tariff__cell m-tariff__cell_title"><span>Тариф</span></div>
 							<div class="m-tariff__cell"><span>Скорость доступа в зарубежный интернет</span></div>
@@ -179,6 +179,165 @@
 						</div>
 						<div class="m-tariff__col">
 							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_orange">бесплатно</div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+					</div>
+					<div id="js-tab-2" class="m-tariff__row">
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title"><span>Тариф</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в зарубежный интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в украинский интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в сеть</span></div>
+							<div class="m-tariff__cell"><span>Внейшний IP</span></div>
+							<div class="m-tariff__cell"><span>Программа лояльности</span></div>
+							<div class="m-tariff__cell"><span>Стоимость подключение перехода</span></div>
+							<div class="m-tariff__cell"><span>Стартовый пакет</span></div>
+							<div class="m-tariff__cell"><span>Абоненская плата</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><span>Абоненская плата в месяц с акцией Скидка 10%</span></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>22222</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_orange">бесплатно</div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+					</div>
+					<div id="js-tab-3" class="m-tariff__row">
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title"><span>Тариф</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в зарубежный интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в украинский интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в сеть</span></div>
+							<div class="m-tariff__cell"><span>Внейшний IP</span></div>
+							<div class="m-tariff__cell"><span>Программа лояльности</span></div>
+							<div class="m-tariff__cell"><span>Стоимость подключение перехода</span></div>
+							<div class="m-tariff__cell"><span>Стартовый пакет</span></div>
+							<div class="m-tariff__cell"><span>Абоненская плата</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><span>Абоненская плата в месяц с акцией Скидка 10%</span></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>33333</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__no"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>К50</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell"><i class="m-tariff__yes"></i></div>
+							<div class="m-tariff__cell m-tariff__cell_orange">бесплатно</div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>200</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>50</strong>грн</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><strong>45 грн</strong></div>
+							<div class="m-tariff__cell m-tariff__cell_order"><a href="#">ЗАКАЗАТЬ</a></div>
+						</div>
+					</div>
+					<div id="js-tab-4" class="m-tariff__row">
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title"><span>Тариф</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в зарубежный интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в украинский интернет</span></div>
+							<div class="m-tariff__cell"><span>Скорость доступа в сеть</span></div>
+							<div class="m-tariff__cell"><span>Внейшний IP</span></div>
+							<div class="m-tariff__cell"><span>Программа лояльности</span></div>
+							<div class="m-tariff__cell"><span>Стоимость подключение перехода</span></div>
+							<div class="m-tariff__cell"><span>Стартовый пакет</span></div>
+							<div class="m-tariff__cell"><span>Абоненская плата</span></div>
+							<div class="m-tariff__cell m-tariff__cell_action"><span>Абоненская плата в месяц с акцией Скидка 10%</span></div>
+						</div>
+						<div class="m-tariff__col">
+							<div class="m-tariff__cell m-tariff__cell_title-orange"><span>4444</span></div>
 							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>30</strong>Мбит</span></div>
 							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>
 							<div class="m-tariff__cell m-tariff__cell_green"><span><strong>100</strong>Мбит</span></div>

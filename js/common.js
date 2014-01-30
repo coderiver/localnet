@@ -1,4 +1,143 @@
+ymaps.ready(function () {
+  var myMap = new ymaps.Map('map-el', {
+    center: [50.554031,30.400078],
+    zoom: 12,
+    behaviors: ['default', 'scrollZoom']
+  });
+  
+
+  /**
+   * Функция возвращает объект-опций для метки.
+   * Все опции, которые поддерживают геообъекты можно посмотреть в документации.
+   * @see http://api.yandex.ru/maps/doc/jsapi/2.x/ref/reference/GeoObject.xml
+   */
+  getPointOptions = function () {
+	  return {
+	    preset: 'twirl#violetIcon'
+	  };
+	}
+
+  // Можно создать выборку из запроса к геокодеру.
+  var myGeocode = ymaps.geoQuery()
+  // Также в выборку можно добавлять несколько запросов к геокодеру.
+  // Они выполнятся по цепочке.
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 5'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 7'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 7-а'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 7-б'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 11'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 15-а'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 17'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 25'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 25-а'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 25-б'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 25-в'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 27'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 27-б'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 27-в'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 39'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 41'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 43'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 61'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 63'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 67'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 71'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 87'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 87-а'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 89'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 89-а'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 93'))
+    .add(ymaps.geocode('Киев, ул. Автозаводская, 97/5'));
+  // После того, как все запросы обработаются, они будут добавлены на карту.
+  // Обратите внимание, что все операции асинхронные, поэтому для продолжения
+  // работы с выборкой следует дождаться готовности данных.
+  myGeocode.then(function () {
+    // Этот код выполнится после того, как все запросы к геокодеру
+    // вернут ответ и объекты будут добавлены на карту.
+    //objects.get(0).balloon.open();
+    clusterer = ymaps.geoQuery(myGeocode).clusterize({
+    	preset: 'twirl#darkgreenClusterIcons'
+    });
+    myMap.geoObjects.options.set('preset', 'twirl#darkgreenDotIcon');
+    myMap.geoObjects.add(clusterer);
+  });
+
+
+
+  //autocomplete
+  $('.js-typeahead').typeahead({                                                                                      
+    prefetch: '../data/street.json',
+    template: [
+      '<p class="street">{{name}}</p>'
+    ].join(''),
+    engine: Hogan                                                            
+  });
+  $('.js-typeahead').on('typeahead:selected', function (object, datum) {
+    $('.js-street').addClass('is-active');
+    $('.js-street-title').html(datum.name);
+    var numbers = datum.numbers;
+    var street = datum.name;
+    var numbers_el = $('.js-street-numbers');
+    numbers_el.html('');
+    for (var i = 0; i < numbers.length; i++) {
+      numbers_el.append('<span>'+numbers[i]+'</span>');
+    }
+    numbers_el.find('span').on('click', function(){
+    	if (!$(this).hasClass('is-active')) {
+  			var number = $(this).html();
+  			$(this).addClass('is-active');
+  		  ymaps.geocode('Киев '+ street + number, {
+  		    results: 1
+  		  }).then(function (res) {
+  		    var firstGeoObject = res.geoObjects.get(0),
+  		      coords = firstGeoObject.geometry.getCoordinates(),
+  		      bounds = firstGeoObject.properties.get('boundedBy');
+  		    myMap.geoObjects.add(firstGeoObject);
+  		    myMap.setBounds(bounds, {
+  		      checkZoomRange: true
+  		    });
+  		    //var myPlacemark = new ymaps.Placemark(coords, {
+  		    //	iconContent: street +' '+ number
+  		    //}, {
+  		   	//	preset: 'twirl#violetStretchyIcon'
+  		    //});
+  		    //myMap.geoObjects.add(myPlacemark);
+  			});
+    	};
+    })
+  });
+  //
+
+
+});
+
+
+
 $(document).ready(function() {
+
+
+//tabs
+function tabs() {
+  $(".js-tabs").each(function(){
+    var tabs_btn = $(this).find('.m-tariff__type a');
+    var tabs_container = $(this).find('.m-tafiff__list-in');
+    var tabs_item = $(this).find('.m-tariff__row');
+    tabs_item.hide();
+    tabs_item.first().show();
+    tabs_btn.on('click', function() {
+	    if (!$(this).parent('li').hasClass('is-active')) {
+	    	var id = $(this).attr('href');
+		    tabs_btn.parent('li').removeClass("is-active");
+		    $(this).parent('li').addClass("is-active");
+		    tabs_item.hide(300);
+		    $('#'+id).fadeIn(300);
+	    };
+	    return false;
+    });
+  });
+}
+tabs();
+
 
 //main action sliders
 function m_slider_action() {
@@ -200,20 +339,6 @@ $(window).scroll(function(){
 });
 
 
-//autocomplete
-$('.autocomplete').typeahead({                                                                                      
-  prefetch: '../data/street.json',
-  template: [
-    '<p class="street">{{name}}</p>'
-  ].join(''),
-  engine: Hogan                                                            
-}).on('autocomplete:selected', function (object, datum) {
-    alert('sdf');
-});;
-
-
-
-
-
 
 });
+
