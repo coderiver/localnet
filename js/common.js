@@ -4,18 +4,6 @@ ymaps.ready(function () {
     zoom: 12,
     behaviors: ['default', 'scrollZoom']
   });
-  
-
-  /**
-   * Функция возвращает объект-опций для метки.
-   * Все опции, которые поддерживают геообъекты можно посмотреть в документации.
-   * @see http://api.yandex.ru/maps/doc/jsapi/2.x/ref/reference/GeoObject.xml
-   */
-  getPointOptions = function () {
-	  return {
-	    preset: 'twirl#violetIcon'
-	  };
-	}
 
   // Можно создать выборку из запроса к геокодеру.
   var myGeocode = ymaps.geoQuery()
@@ -56,10 +44,17 @@ ymaps.ready(function () {
     // вернут ответ и объекты будут добавлены на карту.
     //objects.get(0).balloon.open();
     clusterer = ymaps.geoQuery(myGeocode).clusterize({
-    	preset: 'twirl#darkgreenClusterIcons'
+    	preset: 'twirl#darkgreenClusterIcons',
+    	clusterDisableClickZoom: false
     });
-    myMap.geoObjects.options.set('preset', 'twirl#darkgreenDotIcon');
+    myMap.geoObjects.options.set({'preset': 'twirl#darkgreenDotIcon'});
     myMap.geoObjects.add(clusterer);
+    //myMap.geoObjects.events.add('click', function (e) {
+      //alert('Дошло до коллекции объектов карты');
+      // Получение ссылки на дочерний объект, на котором произошло событие
+      //var object = e.get('target');
+      //alert(object.properties.get('id'));
+    //});
   });
 
 
@@ -120,8 +115,8 @@ $(document).ready(function() {
 function tabs() {
   $(".js-tabs").each(function(){
     var tabs_btn = $(this).find('.m-tariff__type a');
-    var tabs_container = $(this).find('.m-tafiff__list-in');
-    var tabs_item = $(this).find('.m-tariff__row');
+    var tabs_container = $(this).find('.m-tafiff__list');
+    var tabs_item = $(this).find('.m-tariff__list-tab');
     tabs_item.hide();
     tabs_item.first().show();
     tabs_btn.on('click', function() {
@@ -129,8 +124,8 @@ function tabs() {
 	    	var id = $(this).attr('href');
 		    tabs_btn.parent('li').removeClass("is-active");
 		    $(this).parent('li').addClass("is-active");
-		    tabs_item.hide(300);
-		    $('#'+id).fadeIn(300);
+		    tabs_item.hide();
+		    $('#'+id).show();
 	    };
 	    return false;
     });
@@ -160,26 +155,6 @@ function m_slider_action() {
 	});
 }
 m_slider_action();
-
-// //banner slider
-// function slider_banner() {
-// 	$('.js-banner-slider').each(function(){
-// 		el_next = $('.popup__banner-next');
-// 		el_prev = $('.popup__banner-prev');
-// 		el_item = $('.popup__slider-item');
-// 		el_in = $('.popup__slider');
-// 		el_in.cycle({
-// 			fx: 'fade',
-// 		  timeout: 0,
-// 		  delay: 0,
-// 		  prev: el_prev,
-// 		  next: el_next,
-// 		  slides: el_item,
-// 		  autoHeight: 'container'
-// 		});
-// 	});
-// }
-// slider_banner();
 
 //banner slider
 function slider_action() {
@@ -305,8 +280,15 @@ function popup() {
 	var el = $('.js-popup');
 	var btn_open = $('.js-popup-open');
 	var btn_close = $('.js-popup-close');
+	var btn_order = $('.js-tariff-order');
 	btn_open.click(function(){
 		el.fadeIn();
+		return false;
+	});
+	btn_order.click(function(){
+		var tariff = $(this).attr('href');
+		el.fadeIn();
+		$('#order-tariff-value').html(tariff);
 		return false;
 	});
 	btn_close.click(function(){
@@ -326,6 +308,15 @@ $('.js-go-top').on('click', function(){
 $('.js-serice-more').on('click', function(){
 	$('.service').toggleClass('is-open');
 	$(this).toggleClass('is-active');
+});
+
+$('.js-map-streets').find('.m-map__streets-item span').on('click', function(){
+	$(this).next().slideToggle();
+});
+
+$('.js-tariff-info').on('click', function(){
+	$(this).next().slideToggle();
+	return false;
 });
 
 var out = $('.js-out');
