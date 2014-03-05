@@ -61,7 +61,7 @@ ymaps.ready(function () {
 
   //autocomplete
   $('.js-typeahead').typeahead({
-    prefetch: '../data/street.json',
+    prefetch: 'data/street.json',
     template: [
       '<p class="street">{{name}}</p>'
     ].join(''),
