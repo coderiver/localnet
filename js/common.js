@@ -60,12 +60,12 @@ ymaps.ready(function () {
 
 
   //autocomplete
-  $('.js-typeahead').typeahead({                                                                                      
+  $('.js-typeahead').typeahead({
     prefetch: '../data/street.json',
     template: [
       '<p class="street">{{name}}</p>'
     ].join(''),
-    engine: Hogan                                                            
+    engine: Hogan
   });
   $('.js-typeahead').on('typeahead:selected', function (object, datum) {
     $('.js-street').addClass('is-active');
@@ -182,7 +182,7 @@ function action_masonry() {
 	var item = el
 	if (el.length > 0) {
 		el.masonry({
-			itemSelector: '.action__item',	
+			itemSelector: '.action__item',
 			gutter: 20
 		})
 	};
@@ -192,7 +192,7 @@ action_masonry();
 //select
 function select() {
 	var el = $('.js-select');
-	el.find('.select__value').bind('click', function(){		
+	el.find('.select__value').bind('click', function(){
 		if ($(this).parent().hasClass('is-open')) {
 			$(this).parent().removeClass('is-open');
 			$(this).next().hide();
@@ -248,21 +248,21 @@ function nav() {
 		var top = $(item).offset().top;
 		var nav_height = el.height();
 		$('body').animate({scrollTop: top}, 500, function(){
-			window.location.hash = item;	
-		});					
-	});	
+			window.location.hash = item;
+		});
+	});
 }
 nav();
 
 function nav_scroll() {
 	var offset_top = $(window).scrollTop();
 	var item_scroll = $('.scroll-nav');
-	item_scroll.each(function(){		
+	item_scroll.each(function(){
 		var item_scroll_top = $(this).offset().top;
 		if (offset_top >= item_scroll_top) {
 			var item_el = $(this).attr('id');
 			var link_el = $('.js-nav span');
-			link_el.each(function(){		
+			link_el.each(function(){
 				var link_item = $(this).attr('data-item');
 				if ('#'+item_el == link_item) {
 					link_el.parent().removeClass('is-active');
@@ -301,7 +301,7 @@ popup();
 
 //go top
 $('.js-go-top').on('click', function(){
-	$('body').animate({scrollTop: 0}, 800);
+	$('body, html').animate({scrollTop: 0}, 800);
 });
 
 //service more
